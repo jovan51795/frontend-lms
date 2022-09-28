@@ -1,11 +1,5 @@
 import React from "react";
-
-// import "./assets/bootstrap.min.css";
 import "./assets/style.css";
-// import "./assets/favicon.png";
-// import "./assets/fontawesome.min.css";
-// import "./assets/all.min.css";
-// import "./assets/simple-calendar.css";
 
 const StudentDashboard = () => {
   return (
