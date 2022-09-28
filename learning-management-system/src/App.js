@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
-import { Routes, Route, Navigate, useLocation, Router } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
+import Loading from "./pages/loading/Loading";
 import Page404 from "./pages/page404/Page404";
 import { routes } from "./routes";
 
@@ -14,7 +15,7 @@ function App() {
     location.pathname !== "/login" && location.pathname !== "/notfound";
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         {hideSidebarAndHeader ? (
           <>
             <Header />

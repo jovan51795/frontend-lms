@@ -5,17 +5,17 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-left">
-        <a href="index.html" className="logo">
-          <img src="assets/img/logo.png" alt="Logo" />
-        </a>
-        <a href="index.html" className="logo logo-small">
-          <img
+        <Link to="" className="logo">
+          <image src="assets/img/logo.png" alt="Logo" />
+        </Link>
+        <Link to="" className="logo logo-small">
+          <image
             src="assets/img/logo-small.png"
             alt="Logo"
             width="30"
             height="30"
           />
-        </a>
+        </Link>
       </div>
       <Link id="toggle_btn">
         <i className="fas fa-align-left"></i>
@@ -32,19 +32,15 @@ const Header = () => {
           </button>
         </form>
       </div>
-      <a className="mobile_btn" id="mobile_btn">
+      <Link className="mobile_btn" id="mobile_btn">
         <i className="fas fa-bars"></i>
-      </a>
+      </Link>
       <ul className="nav user-menu">
         <li className="nav-item dropdown noti-dropdown">
-          <a
-            href="#"
-            className="dropdown-toggle nav-link"
-            data-toggle="dropdown"
-          >
+          <Link className="dropdown-toggle nav-link" data-toggle="dropdown">
             <i className="far fa-bell"></i>{" "}
             <span className="badge badge-pill">3</span>
-          </a>
+          </Link>
           <div className="dropdown-menu notifications">
             <div className="topnav-dropdown-header">
               <span className="notification-title">Notifications</span>
@@ -53,10 +49,10 @@ const Header = () => {
             <div className="noti-content">
               <ul className="notification-list">
                 <li className="notification-message">
-                  <a href="#">
+                  <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <img
+                        <image
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-02.jpg"
@@ -73,13 +69,13 @@ const Header = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <img
+                        <image
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-11.jpg"
@@ -98,13 +94,13 @@ const Header = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <img
+                        <image
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-17.jpg"
@@ -121,13 +117,13 @@ const Header = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <img
+                        <image
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-13.jpg"
@@ -146,34 +142,30 @@ const Header = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="topnav-dropdown-footer">
-              <a href="#">View all Notifications</a>
+              <Link>View all Notifications</Link>
             </div>
           </div>
         </li>
         <li className="nav-item dropdown has-arrow">
-          <a
-            href="#"
-            className="dropdown-toggle nav-link"
-            data-toggle="dropdown"
-          >
+          <Link className="dropdown-toggle nav-link" data-toggle="dropdown">
             <span className="user-img">
-              <img
+              <image
                 className="rounded-circle"
                 src="assets/img/profiles/avatar-01.jpg"
                 width="31"
                 alt="Ryan Taylor"
               />
             </span>
-          </a>
+          </Link>
           <div className="dropdown-menu">
             <div className="user-header">
               <div className="avatar avatar-sm">
-                <img
+                <image
                   src="assets/img/profiles/avatar-01.jpg"
                   alt="User Image"
                   className="avatar-img rounded-circle"
@@ -184,15 +176,15 @@ const Header = () => {
                 <p className="text-muted mb-0">Administrator</p>
               </div>
             </div>
-            <a className="dropdown-item" href="profile.html">
+            <Link className="dropdown-item" to="">
               My Profile
-            </a>
-            <a className="dropdown-item" href="inbox.html">
+            </Link>
+            <Link className="dropdown-item" to="">
               Inbox
-            </a>
-            <a className="dropdown-item" href="login.html">
+            </Link>
+            <Link className="dropdown-item" to="">
               Logout
-            </a>
+            </Link>
           </div>
         </li>
       </ul>
