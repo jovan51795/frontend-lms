@@ -1,12 +1,5 @@
 import React from "react";
 
-// import "./assets/bootstrap.min.css";
-import "./assets/style.css";
-// import "./assets/favicon.png";
-// import "./assets/fontawesome.min.css";
-// import "./assets/all.min.css";
-// import "./assets/simple-calendar.css";
-
 const StudentDashboard = () => {
   return (
     <>
@@ -26,7 +19,7 @@ const StudentDashboard = () => {
             </a>
           </div>
 
-          <a href="javascript:void(0);" id="toggle_btn">
+          <a href="#" id="toggle_btn">
             <i className="fas fa-align-left"></i>
           </a>
 
@@ -60,7 +53,7 @@ const StudentDashboard = () => {
               <div className="dropdown-menu notifications">
                 <div className="topnav-dropdown-header">
                   <span className="notification-title">Notifications</span>
-                  <a href="javascript:void(0)" className="clear-noti">
+                  <a href="#" className="clear-noti">
                     {" "}
                     Clear All{" "}
                   </a>
@@ -484,40 +477,40 @@ const StudentDashboard = () => {
                   </ul>
                 </li>
                 <li className="submenu">
-                  <a href="javascript:void(0);">
+                  <a href="#">
                     <i className="fas fa-code"></i> <span>Multi Level</span>{" "}
                     <span className="menu-arrow"></span>
                   </a>
                   <ul>
                     <li className="submenu">
-                      <a href="javascript:void(0);">
+                      <a href="#">
                         {" "}
                         <span>Level 1</span>{" "}
                         <span className="menu-arrow"></span>
                       </a>
                       <ul>
                         <li>
-                          <a href="javascript:void(0);">
+                          <a href="#">
                             <span>Level 2</span>
                           </a>
                         </li>
                         <li className="submenu">
-                          <a href="javascript:void(0);">
+                          <a href="#">
                             {" "}
                             <span> Level 2</span>{" "}
                             <span className="menu-arrow"></span>
                           </a>
                           <ul>
                             <li>
-                              <a href="javascript:void(0);">Level 3</a>
+                              <a href="#">Level 3</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0);">Level 3</a>
+                              <a href="#">Level 3</a>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <a href="javascript:void(0);">
+                          <a href="#">
                             {" "}
                             <span>Level 2</span>
                           </a>
@@ -525,7 +518,7 @@ const StudentDashboard = () => {
                       </ul>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
+                      <a href="#">
                         {" "}
                         <span>Level 1</span>
                       </a>
