@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -39,7 +40,7 @@ const Login = () => {
                   </div>
                 </form>
                 <div className="text-center forgotpass">
-                  <a href="forgot-password.html">Forgot Password?</a>
+                  <Link to="">Forgot Password?</Link>
                 </div>
                 <div className="login-or">
                   <span className="or-line"></span>
@@ -47,15 +48,15 @@ const Login = () => {
                 </div>
                 <div className="social-login">
                   <span>Login with</span>
-                  <a href="#" className="facebook">
+                  <Link className="facebook">
                     <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="google">
+                  </Link>
+                  <Link className="google">
                     <i className="fab fa-google"></i>
-                  </a>
+                  </Link>
                 </div>
                 <div className="text-center dont-have">
-                  Don’t have an account? <a href="register.html">Register</a>
+                  Don’t have an account? <Link to="/register">Register</Link>
                 </div>
               </div>
             </div>
