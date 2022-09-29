@@ -6,10 +6,10 @@ const Header = () => {
     <div className="header">
       <div className="header-left">
         <Link to="" className="logo">
-          <image src="assets/img/logo.png" alt="Logo" />
+          <img src="assets/img/logo.png" alt="Logo" />
         </Link>
         <Link to="" className="logo logo-small">
-          <image
+          <img
             src="assets/img/logo-small.png"
             alt="Logo"
             width="30"
@@ -52,7 +52,7 @@ const Header = () => {
                   <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <image
+                        <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-02.jpg"
@@ -75,7 +75,7 @@ const Header = () => {
                   <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <image
+                        <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-11.jpg"
@@ -100,7 +100,7 @@ const Header = () => {
                   <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <image
+                        <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-17.jpg"
@@ -123,7 +123,7 @@ const Header = () => {
                   <Link>
                     <div className="media">
                       <span className="avatar avatar-sm">
-                        <image
+                        <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
                           src="assets/img/profiles/avatar-13.jpg"
@@ -154,7 +154,7 @@ const Header = () => {
         <li className="nav-item dropdown has-arrow">
           <Link className="dropdown-toggle nav-link" data-toggle="dropdown">
             <span className="user-img">
-              <image
+              <img
                 className="rounded-circle"
                 src="assets/img/profiles/avatar-01.jpg"
                 width="31"
@@ -165,7 +165,7 @@ const Header = () => {
           <div className="dropdown-menu">
             <div className="user-header">
               <div className="avatar avatar-sm">
-                <image
+                <img
                   src="assets/img/profiles/avatar-01.jpg"
                   alt="User Image"
                   className="avatar-img rounded-circle"
