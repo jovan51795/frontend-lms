@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                           <span className="avatar avatar-sm">
                             <img
                               className="avatar-img rounded-circle"
-                              alt="User Image"
+                              alt="User Avatar"
                               src="assets/img/profiles/avatar-02.jpg"
                             />
                           </span>
@@ -91,7 +91,7 @@ const AdminDashboard = () => {
                           <span className="avatar avatar-sm">
                             <img
                               className="avatar-img rounded-circle"
-                              alt="User Image"
+                              alt="User Avatar"
                               src="assets/img/profiles/avatar-11.jpg"
                             />
                           </span>
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
                           <span className="avatar avatar-sm">
                             <img
                               className="avatar-img rounded-circle"
-                              alt="User Image"
+                              alt="User Avatar"
                               src="assets/img/profiles/avatar-17.jpg"
                             />
                           </span>
@@ -145,7 +145,7 @@ const AdminDashboard = () => {
                           <span className="avatar avatar-sm">
                             <img
                               className="avatar-img rounded-circle"
-                              alt="User Image"
+                              alt="User Avatar"
                               src="assets/img/profiles/avatar-13.jpg"
                             />
                           </span>
@@ -195,7 +195,7 @@ const AdminDashboard = () => {
                   <div className="avatar avatar-sm">
                     <img
                       src="assets/img/profiles/avatar-01.jpg"
-                      alt="User Image"
+                      alt="User Avatar"
                       className="avatar-img rounded-circle"
                     />
                   </div>
