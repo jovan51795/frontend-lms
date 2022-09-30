@@ -8,11 +8,14 @@ import Page404 from "./pages/page404/Page404";
 import { routes } from "./routes";
 
 const Login = React.lazy(() => import("./pages/Login"));
+const Register = React.lazy(() => import("./pages/Register"));
 
 function App() {
   const location = useLocation();
   const hideSidebarAndHeader =
-    location.pathname !== "/login" && location.pathname !== "/notfound";
+    location.pathname !== "/login" &&
+    location.pathname !== "/notfound" &&
+    location.pathname !== "/register";
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -26,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {routes.map((route, idx) => (
             <Route
               key={idx}
