@@ -6,12 +6,12 @@ const StudentDashboard = () => {
       <div className="main-wrapper">
         <div className="header">
           <div className="header-left">
-            <a href="index.html" className="logo">
-              <img src="assets/img/logo.png" alt="Logo" />
+            <a href="/dashboard/student" className="logo">
+              <img src="/assets/img/logo.png" alt="Logo" />
             </a>
-            <a href="index.html" className="logo logo-small">
+            <a href="/dashboard/student" className="logo logo-small">
               <img
-                src="assets/img/logo-small.png"
+                src="/assets/img/logo-small.png"
                 alt="Logo"
                 width="30"
                 height="30"
@@ -67,7 +67,7 @@ const StudentDashboard = () => {
                             <img
                               className="avatar-img rounded-circle"
                               alt="User Image"
-                              src="assets/img/profiles/avatar-02.jpg"
+                              src="/assets/img/profiles/avatar-02.jpg"
                             />
                           </span>
                           <div className="media-body">
@@ -92,7 +92,7 @@ const StudentDashboard = () => {
                             <img
                               className="avatar-img rounded-circle"
                               alt="User Image"
-                              src="assets/img/profiles/avatar-11.jpg"
+                              src="/assets/img/profiles/avatar-11.jpg"
                             />
                           </span>
                           <div className="media-body">
@@ -119,7 +119,7 @@ const StudentDashboard = () => {
                             <img
                               className="avatar-img rounded-circle"
                               alt="User Image"
-                              src="assets/img/profiles/avatar-17.jpg"
+                              src="/assets/img/profiles/avatar-17.jpg"
                             />
                           </span>
                           <div className="media-body">
@@ -146,7 +146,7 @@ const StudentDashboard = () => {
                             <img
                               className="avatar-img rounded-circle"
                               alt="User Image"
-                              src="assets/img/profiles/avatar-13.jpg"
+                              src="/assets/img/profiles/avatar-13.jpg"
                             />
                           </span>
                           <div className="media-body">
@@ -185,7 +185,7 @@ const StudentDashboard = () => {
                 <span className="user-img">
                   <img
                     className="rounded-circle"
-                    src="assets/img/profiles/avatar-01.jpg"
+                    src="/assets/img/profiles/avatar-01.jpg"
                     width="31"
                     alt="Ryan Taylor"
                   />
@@ -195,7 +195,7 @@ const StudentDashboard = () => {
                 <div className="user-header">
                   <div className="avatar avatar-sm">
                     <img
-                      src="assets/img/profiles/avatar-01.jpg"
+                      src="/assets/img/profiles/avatar-01.jpg"
                       alt="User Image"
                       className="avatar-img rounded-circle"
                     />
