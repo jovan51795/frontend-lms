@@ -15,7 +15,8 @@ function App() {
   const hideSidebarAndHeader =
     location.pathname !== "/login" &&
     location.pathname !== "/notfound" &&
-    location.pathname !== "/register";
+    location.pathname !== "/register" &&
+    location.pathname !== "/dashboard";
   return (
     <>
       <Suspense fallback={<Loading />}>

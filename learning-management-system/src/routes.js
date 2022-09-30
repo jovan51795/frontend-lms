@@ -7,6 +7,12 @@ const StudentDashboard = React.lazy(() =>
 const StudentList = React.lazy(() =>
   import("./student-module/pages/StudentList")
 );
+const AdminDashboard = React.lazy(() =>
+  import("./administrator-module/pages/AdminDashboard")
+);
+const AdminProfile = React.lazy(() =>
+  import("./administrator-module/pages/AdminProfile")
+);
 
 export const routes = [
   { path: "/dashboard", name: "Dashboard", element: Dashboard },
@@ -16,4 +22,14 @@ export const routes = [
     element: StudentDashboard,
   },
   { path: "/student/studentlist", name: "StudentList", element: StudentList },
+  {
+    path: "/dashboard/admin",
+    name: "Admin-Dashboard",
+    element: AdminDashboard,
+  },
+  {
+    path: "/admin/profile",
+    name: "Admin-Profile",
+    element: AdminProfile,
+  },
 ];
