@@ -1,12 +1,12 @@
 import React from "react";
 import DashboardHeader from "../components/header/DashboardHeader";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <div>
       <DashboardHeader />
-      <section id="home" class="video-section js-height-full">
+      {/* <section id="home" class="video-section js-height-full">
         <div class="overlay"></div>
         <div class="home-text-wrapper relative container">
           <div class="home-message">
@@ -27,7 +27,7 @@ const Dashboard = () => {
                 </Link>
               </div>
             </div>
-            {/* <!-- end row --> */}
+             <!-- end row -->
           </div>
         </div>
         <div class="slider-bottom">
@@ -36,6 +36,7 @@ const Dashboard = () => {
           </span>
         </div>
       </section>
+     */}
     </div>
   );
 };
