@@ -25,7 +25,7 @@ const Sidebar = () => {
                   <Link to="">Teacher Dashboard</Link>
                 </li>
                 <li>
-                  <Link to="">Student Dashboard</Link>
+                  <Link to="/dashoard/student">Student Dashboard</Link>
                 </li>
               </ul>
             </li>
