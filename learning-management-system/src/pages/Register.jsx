@@ -9,7 +9,7 @@ const Register = () => {
   const [adminForm, setadminForm] = useState({
     firstName: "",
     lastName: "",
-    userName: "",
+    username: "",
     password: "",
     type: "Admin",
   });
@@ -19,7 +19,7 @@ const Register = () => {
   const schema = Joi.object({
     firstName: Joi.string().allow("").required(),
     lastName: Joi.string().allow("").required(),
-    userName: Joi.string().allow("").required(),
+    username: Joi.string().allow("").required(),
     password: Joi.string().allow("").required(),
     type: Joi.string().required(),
   });
@@ -104,16 +104,16 @@ const Register = () => {
                   <div className="form-group">
                     <input
                       className={`form-control ${
-                        !!errors.userName && "border-danger"
+                        !!errors.username && "border-danger"
                       }`}
-                      value={adminForm.userName}
+                      value={adminForm.username}
                       type="text"
-                      name="userName"
+                      name="username"
                       onChange={handleOnChange}
                       placeholder="username"
                     />
                     {!!errors.firstName && (
-                      <span className="text-danger">{errors.userName}</span>
+                      <span className="text-danger">{errors.username}</span>
                     )}
                   </div>
                   <div className="form-group">
