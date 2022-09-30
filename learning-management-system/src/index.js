@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { legacy_createStore, applyMiddleware } from "redux";
 import allReducers from "./redux/reducers";
 import thunk from "redux-thunk";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const store = legacy_createStore(allReducers, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

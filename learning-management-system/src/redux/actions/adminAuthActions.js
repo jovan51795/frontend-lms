@@ -18,3 +18,21 @@ export const adminRegister = (data) => {
     }
   };
 };
+
+export const adminLogin = (data) => {
+  return async function (dispatch) {
+    try {
+      await http.post("/login", data).then((res) => {
+        console.log(res);
+        if (res) {
+          dispatch({
+            type: variables.adminLogin,
+            payload: "success",
+          });
+        }
+      });
+    } catch (error) {
+      console.log(error, "the error");
+    }
+  };
+};
