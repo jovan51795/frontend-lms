@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const StudentDashboard = () => {
   return (
@@ -7,22 +6,22 @@ const StudentDashboard = () => {
       <div className="main-wrapper">
         <div className="header">
           <div className="header-left">
-            <Link to={"/dashboard/student"} className="logo">
+            <a href="/dashboard/student" className="logo">
               <img src="/assets/img/logo.png" alt="Logo" />
-            </Link>
-            <Link to="/dashboard/student" className="logo logo-small">
+            </a>
+            <a href="/dashboard/student" className="logo logo-small">
               <img
                 src="/assets/img/logo-small.png"
                 alt="Logo"
                 width="30"
                 height="30"
               />
-            </Link>
+            </a>
           </div>
 
-          <Link to="#" id="toggle_btn">
+          <a href="#" id="toggle_btn">
             <i className="fas fa-align-left"></i>
-          </Link>
+          </a>
 
           <div className="top-nav-search">
             <form>
@@ -37,32 +36,32 @@ const StudentDashboard = () => {
             </form>
           </div>
 
-          <Link className="mobile_btn" id="mobile_btn">
+          <a className="mobile_btn" id="mobile_btn">
             <i className="fas fa-bars"></i>
-          </Link>
+          </a>
 
           <ul className="nav user-menu">
             <li className="nav-item dropdown noti-dropdown">
-              <Link
+              <a
                 href="#"
                 className="dropdown-toggle nav-link"
                 data-toggle="dropdown"
               >
                 <i className="far fa-bell"></i>{" "}
                 <span className="badge badge-pill">3</span>
-              </Link>
+              </a>
               <div className="dropdown-menu notifications">
                 <div className="topnav-dropdown-header">
                   <span className="notification-title">Notifications</span>
-                  <Link to="#" className="clear-noti">
+                  <a href="#" className="clear-noti">
                     {" "}
                     Clear All{" "}
-                  </Link>
+                  </a>
                 </div>
                 <div className="noti-content">
                   <ul className="notification-list">
                     <li className="notification-message">
-                      <Link to="#">
+                      <a href="#">
                         <div className="media">
                           <span className="avatar avatar-sm">
                             <img
@@ -84,10 +83,10 @@ const StudentDashboard = () => {
                             </p>
                           </div>
                         </div>
-                      </Link>
+                      </a>
                     </li>
                     <li className="notification-message">
-                      <Link to="#">
+                      <a href="#">
                         <div className="media">
                           <span className="avatar avatar-sm">
                             <img
@@ -111,10 +110,10 @@ const StudentDashboard = () => {
                             </p>
                           </div>
                         </div>
-                      </Link>
+                      </a>
                     </li>
                     <li className="notification-message">
-                      <Link to="#">
+                      <a href="#">
                         <div className="media">
                           <span className="avatar avatar-sm">
                             <img
@@ -138,10 +137,10 @@ const StudentDashboard = () => {
                             </p>
                           </div>
                         </div>
-                      </Link>
+                      </a>
                     </li>
                     <li className="notification-message">
-                      <Link to="#">
+                      <a href="#">
                         <div className="media">
                           <span className="avatar avatar-sm">
                             <img
@@ -167,18 +166,18 @@ const StudentDashboard = () => {
                             </p>
                           </div>
                         </div>
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
                 <div className="topnav-dropdown-footer">
-                  <Link to="#">View all Notifications</Link>
+                  <a href="#">View all Notifications</a>
                 </div>
               </div>
             </li>
 
             <li className="nav-item dropdown has-arrow">
-              <Link
+              <a
                 href="#"
                 className="dropdown-toggle nav-link"
                 data-toggle="dropdown"
@@ -191,7 +190,7 @@ const StudentDashboard = () => {
                     alt="Ryan Taylor"
                   />
                 </span>
-              </Link>
+              </a>
               <div className="dropdown-menu">
                 <div className="user-header">
                   <div className="avatar avatar-sm">
@@ -206,18 +205,329 @@ const StudentDashboard = () => {
                     <p className="text-muted mb-0">Administrator</p>
                   </div>
                 </div>
-                <Link className="dropdown-item" href="profile.html">
+                <a className="dropdown-item" href="profile.html">
                   My Profile
-                </Link>
-                <Link className="dropdown-item" href="inbox.html">
+                </a>
+                <a className="dropdown-item" href="inbox.html">
                   Inbox
-                </Link>
-                <Link className="dropdown-item" href="login.html">
+                </a>
+                <a className="dropdown-item" href="login.html">
                   Logout
-                </Link>
+                </a>
               </div>
             </li>
           </ul>
+        </div>
+
+        <div className="sidebar" id="sidebar">
+          <div className="sidebar-inner slimscroll">
+            <div id="sidebar-menu" className="sidebar-menu">
+              <ul>
+                <li className="menu-title">
+                  <span>Main Menu</span>
+                </li>
+                <li className="submenu active">
+                  <a href="#">
+                    <i className="fas fa-user-graduate"></i>{" "}
+                    <span> Dashboard</span> <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="index.html">Admin Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="teacher-dashboard.html">Teacher Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="student-dashboard.html" className="active">
+                        Student Dashboard
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-user-graduate"></i>{" "}
+                    <span> Students</span> <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="students.html">Student List</a>
+                    </li>
+                    <li>
+                      <a href="student-details.html">Student View</a>
+                    </li>
+                    <li>
+                      <a href="add-student.html">Student Add</a>
+                    </li>
+                    <li>
+                      <a href="edit-student.html">Student Edit</a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-chalkboard-teacher"></i>{" "}
+                    <span> Teachers</span> <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="teachers.html">Teacher List</a>
+                    </li>
+                    <li>
+                      <a href="teacher-details.html">Teacher View</a>
+                    </li>
+                    <li>
+                      <a href="add-teacher.html">Teacher Add</a>
+                    </li>
+                    <li>
+                      <a href="edit-teacher.html">Teacher Edit</a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-building"></i>{" "}
+                    <span> Departments</span>{" "}
+                    <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="departments.html">Department List</a>
+                    </li>
+                    <li>
+                      <a href="add-department.html">Department Add</a>
+                    </li>
+                    <li>
+                      <a href="edit-department.html">Department Edit</a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-book-reader"></i>{" "}
+                    <span> Subjects</span> <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="subjects.html">Subject List</a>
+                    </li>
+                    <li>
+                      <a href="add-subject.html">Subject Add</a>
+                    </li>
+                    <li>
+                      <a href="edit-subject.html">Subject Edit</a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="menu-title">
+                  <span>Management</span>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-file-invoice-dollar"></i>{" "}
+                    <span> Accounts</span> <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="fees-collections.html">Fees Collection</a>
+                    </li>
+                    <li>
+                      <a href="expenses.html">Expenses</a>
+                    </li>
+                    <li>
+                      <a href="salary.html">Salary</a>
+                    </li>
+                    <li>
+                      <a href="add-fees-collection.html">Add Fees</a>
+                    </li>
+                    <li>
+                      <a href="add-expenses.html">Add Expenses</a>
+                    </li>
+                    <li>
+                      <a href="add-salary.html">Add Salary</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="holiday.html">
+                    <i className="fas fa-holly-berry"></i> <span>Holiday</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="fees.html">
+                    <i className="fas fa-comment-dollar"></i> <span>Fees</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="exam.html">
+                    <i className="fas fa-clipboard-list"></i>{" "}
+                    <span>Exam list</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="event.html">
+                    <i className="fas fa-calendar-day"></i> <span>Events</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="time-table.html">
+                    <i className="fas fa-table"></i> <span>Time Table</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="library.html">
+                    <i className="fas fa-book"></i> <span>Library</span>
+                  </a>
+                </li>
+                <li className="menu-title">
+                  <span>Pages</span>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-shield-alt"></i>{" "}
+                    <span> Authentication </span>{" "}
+                    <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="register.html">Register</a>
+                    </li>
+                    <li>
+                      <a href="forgot-password.html">Forgot Password</a>
+                    </li>
+                    <li>
+                      <a href="error-404.html">Error Page</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blank-page.html">
+                    <i className="fas fa-file"></i> <span>Blank Page</span>
+                  </a>
+                </li>
+                <li className="menu-title">
+                  <span>Others</span>
+                </li>
+                <li>
+                  <a href="sports.html">
+                    <i className="fas fa-baseball-ball"></i> <span>Sports</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="hostel.html">
+                    <i className="fas fa-hotel"></i> <span>Hostel</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="transport.html">
+                    <i className="fas fa-bus"></i> <span>Transport</span>
+                  </a>
+                </li>
+                <li className="menu-title">
+                  <span>UI Interface</span>
+                </li>
+                <li>
+                  <a href="components.html">
+                    <i className="fas fa-vector-square"></i>{" "}
+                    <span>Components</span>
+                  </a>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-columns"></i> <span> Forms </span>{" "}
+                    <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="form-basic-inputs.html">Basic Inputs </a>
+                    </li>
+                    <li>
+                      <a href="form-input-groups.html">Input Groups </a>
+                    </li>
+                    <li>
+                      <a href="form-horizontal.html">Horizontal Form </a>
+                    </li>
+                    <li>
+                      <a href="form-vertical.html"> Vertical Form </a>
+                    </li>
+                    <li>
+                      <a href="form-mask.html"> Form Mask </a>
+                    </li>
+                    <li>
+                      <a href="form-validation.html"> Form Validation </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-table"></i> <span> Tables </span>{" "}
+                    <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="tables-basic.html">Basic Tables </a>
+                    </li>
+                    <li>
+                      <a href="data-tables.html">Data Table </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="submenu">
+                  <a href="#">
+                    <i className="fas fa-code"></i> <span>Multi Level</span>{" "}
+                    <span className="menu-arrow"></span>
+                  </a>
+                  <ul>
+                    <li className="submenu">
+                      <a href="#">
+                        {" "}
+                        <span>Level 1</span>{" "}
+                        <span className="menu-arrow"></span>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <span>Level 2</span>
+                          </a>
+                        </li>
+                        <li className="submenu">
+                          <a href="#">
+                            {" "}
+                            <span> Level 2</span>{" "}
+                            <span className="menu-arrow"></span>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="#">Level 3</a>
+                            </li>
+                            <li>
+                              <a href="#">Level 3</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="#">
+                            {" "}
+                            <span>Level 2</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        {" "}
+                        <span>Level 1</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="page-wrapper">
@@ -228,7 +538,7 @@ const StudentDashboard = () => {
                   <h3 className="page-title">Welcome Bruklin!</h3>
                   <ul className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <Link to="index.html">Dashboard</Link>
+                      <a href="index.html">Dashboard</a>
                     </li>
                     <li className="breadcrumb-item active">
                       Student Dashboard
@@ -311,7 +621,7 @@ const StudentDashboard = () => {
                       </div>
                       <div className="col-6">
                         <span className="float-right view-link">
-                          <Link to="#">View All Courses</Link>
+                          <a href="#">View All Courses</a>
                         </span>
                       </div>
                     </div>
@@ -448,7 +758,7 @@ const StudentDashboard = () => {
                                 Sep 05, 9 am - 10 am (60min)
                               </div>
                               <span className="feed-text1">
-                                <Link>Lorem ipsum dolor</Link>
+                                <a>Lorem ipsum dolor</a>
                               </span>
                               <p>
                                 <span>In Progress</span>
@@ -459,7 +769,7 @@ const StudentDashboard = () => {
                                 Sep 04, 2 pm - 3 pm (70min)
                               </div>
                               <span className="feed-text1">
-                                <Link>Et dolore magna</Link>
+                                <a>Et dolore magna</a>
                               </span>
                               <p>Completed</p>
                             </li>
@@ -468,7 +778,7 @@ const StudentDashboard = () => {
                                 Sep 02, 1 pm - 2 am (80min)
                               </div>
                               <span className="feed-text1">
-                                <Link>Exercitation ullamco</Link>
+                                <a>Exercitation ullamco</a>
                               </span>
                               <p>
                                 <span>In Progress</span>
@@ -479,7 +789,7 @@ const StudentDashboard = () => {
                                 Aug 30, 10 am - 12 pm (90min)
                               </div>
                               <span className="feed-text1">
-                                <Link>Occaecat cupidatat</Link>
+                                <a>Occaecat cupidatat</a>
                               </span>
                               <p>Completed</p>
                             </li>

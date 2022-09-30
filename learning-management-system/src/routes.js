@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const StudentDashboard = React.lazy(() =>
