@@ -1,17 +1,39 @@
-import React, { Suspense } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import Loading from "./pages/loading/Loading";
 import Page404 from "./pages/page404/Page404";
 import { routes } from "./routes";
+import { ToastContainer } from "react-toastify";
+import { getUserInfo } from "./services/userInfo";
 
 const Login = React.lazy(() => import("./pages/Login"));
 const Register = React.lazy(() => import("./pages/Register"));
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const userInFo = getUserInfo();
+  useEffect(() => {
+    if (
+      (location.pathname === "/register" || location.pathname === "/login") &&
+      userInFo &&
+      userInFo.status === 1
+    ) {
+      navigate("/dashboard");
+    } else if (!userInFo || (userInFo && userInFo.status === 0)) {
+      navigate("/login");
+    }
+  }, [userInFo]);
+
   const hideSidebarAndHeader =
     location.pathname !== "/login" &&
     location.pathname !== "/notfound" &&
@@ -20,6 +42,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<Loading />}>
+        <ToastContainer />
         {hideSidebarAndHeader ? (
           <>
             <Header />

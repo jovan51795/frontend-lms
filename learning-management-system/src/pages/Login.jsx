@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Joi from "joi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { adminLogin } from "../redux/actions/adminAuthActions";
 
 const Login = () => {
+  const navigate = useNavigate();
+  useSelector((state) => {
+    if (state.adminAuth.payload && state.adminAuth.payload.status === 1) {
+      navigate("/dashboard");
+    }
+  });
+
   const dispatch = useDispatch();
   const [loginForm, setLoginForm] = useState({
     username: "",
