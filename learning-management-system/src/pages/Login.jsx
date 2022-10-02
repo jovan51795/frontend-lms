@@ -1,7 +1,62 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Joi from "joi";
+import { useDispatch, useSelector } from "react-redux";
+import { adminLogin } from "../redux/actions/adminAuthActions";
 
 const Login = () => {
+  const navigate = useNavigate();
+  useSelector((state) => {
+    if (state.adminAuth.payload && state.adminAuth.payload.status === 1) {
+      navigate("/dashboard");
+    }
+  });
+
+  const dispatch = useDispatch();
+  const [loginForm, setLoginForm] = useState({
+    username: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const schema = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().required(),
+  });
+
+  const handleOnChange = (event) => {
+    event.preventDefault();
+    setLoginForm({
+      ...loginForm,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+
+    const { error } = schema
+      .extract(event.currentTarget.name)
+      .label(event.currentTarget.name)
+      .validate(event.currentTarget.value);
+
+    if (error) {
+      setErrors({
+        ...errors,
+        [event.currentTarget.name]: error.details[0].message,
+      });
+    } else {
+      delete errors[event.currentTarget.name];
+      setErrors(errors);
+    }
+  };
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    dispatch(adminLogin(loginForm));
+  };
+
+  const isFormInvalid = () => {
+    const result = schema.validate(loginForm);
+    return !!result.error;
+  };
   return (
     <div className="main-wrapper login-body">
       <div className="login-wrapper">
@@ -17,24 +72,44 @@ const Login = () => {
             <div className="login-right">
               <div className="login-right-wrap">
                 <h1>Login</h1>
-                <p className="account-subtitle">sample</p>
-                <form action="https://preschool.dreamguystech.com/html-template/index.html">
+                <p className="account-subtitle"></p>
+                <form onSubmit={handleOnSubmit} method="Post">
                   <div className="form-group">
                     <input
-                      className="form-control"
+                      className={`form-control ${
+                        !!errors.username && "border-danger"
+                      }`}
+                      value={loginForm.username}
+                      onChange={handleOnChange}
+                      name="username"
                       type="text"
-                      placeholder="Email"
+                      placeholder="Username"
                     />
+                    {!!errors.username ? (
+                      <span className="text-danger">{errors.use}</span>
+                    ) : null}
                   </div>
                   <div className="form-group">
                     <input
-                      className="form-control"
-                      type="text"
+                      className={`form-control ${
+                        !!errors.password && "border-danger"
+                      }`}
+                      value={loginForm.password}
+                      onChange={handleOnChange}
+                      name="password"
+                      type="password"
                       placeholder="Password"
                     />
+                    {!!errors.username ? (
+                      <span className="text-danger">{errors.use}</span>
+                    ) : null}
                   </div>
                   <div className="form-group">
-                    <button className="btn btn-primary btn-block" type="submit">
+                    <button
+                      className="btn btn-primary btn-block"
+                      type="submit"
+                      disabled={isFormInvalid()}
+                    >
                       Login
                     </button>
                   </div>

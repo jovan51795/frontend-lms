@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { getUserInfo } from "../services/userInfo";
+import AdminDashboard from "../components/admin/AdminDashboard";
+import StudentDashboard from "../components/student/StudentDashboard";
 
 const Dashboard = () => {
+  const [userInfo] = useState(getUserInfo);
   return (
-    <div class="main-wrapper">
-      <p>Dashboard</p>
-    </div>
+    <>
+      {userInfo.object.type === "admin" ? (
+        <AdminDashboard />
+      ) : (
+        <StudentDashboard />
+      )}
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Joi from "joi";
 
 import { adminRegister } from "../redux/actions/adminAuthActions";
@@ -9,7 +9,7 @@ const Register = () => {
   const [adminForm, setadminForm] = useState({
     firstName: "",
     lastName: "",
-    userName: "",
+    username: "",
     password: "",
     type: "Admin",
   });
@@ -17,10 +17,10 @@ const Register = () => {
   const dispatch = useDispatch();
 
   const schema = Joi.object({
-    firstName: Joi.string().allow("").required(),
-    lastName: Joi.string().allow("").required(),
-    userName: Joi.string().allow("").required(),
-    password: Joi.string().allow("").required(),
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
+    username: Joi.string().required(),
+    password: Joi.string().required(),
     type: Joi.string().required(),
   });
 
@@ -33,7 +33,7 @@ const Register = () => {
 
     const { error } = schema
       .extract(e.currentTarget.name)
-      .label(e.currentTarget.name.toUpperCase())
+      .label(e.currentTarget.name)
       .validate(e.currentTarget.value);
 
     if (error) {
@@ -50,6 +50,10 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(adminRegister(adminForm));
+  };
+  const isFormInvalid = () => {
+    const result = schema.validate(adminForm);
+    return !!result.error;
   };
   return (
     <div className="main-wrapper login-body">
@@ -104,16 +108,16 @@ const Register = () => {
                   <div className="form-group">
                     <input
                       className={`form-control ${
-                        !!errors.userName && "border-danger"
+                        !!errors.username && "border-danger"
                       }`}
-                      value={adminForm.userName}
+                      value={adminForm.username}
                       type="text"
-                      name="userName"
+                      name="username"
                       onChange={handleOnChange}
                       placeholder="username"
                     />
                     {!!errors.firstName && (
-                      <span className="text-danger">{errors.userName}</span>
+                      <span className="text-danger">{errors.username}</span>
                     )}
                   </div>
                   <div className="form-group">
@@ -147,7 +151,11 @@ const Register = () => {
                     )}
                   </div>
                   <div className="form-group mb-0">
-                    <button className="btn btn-primary btn-block" type="submit">
+                    <button
+                      className="btn btn-primary btn-block"
+                      type="submit"
+                      disabled={isFormInvalid()}
+                    >
                       Register
                     </button>
                   </div>
