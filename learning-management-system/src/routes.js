@@ -7,6 +7,9 @@ const StudentDashboard = React.lazy(() =>
 const StudentList = React.lazy(() =>
   import("./student-module/pages/StudentList")
 );
+const AddStudent = React.lazy(() =>
+  import("./student-module/pages/AddStudent")
+);
 
 export const routes = [
   { path: "/dashboard", name: "Dashboard", element: Dashboard },
@@ -15,5 +18,6 @@ export const routes = [
     name: "Student-Dashboard",
     element: StudentDashboard,
   },
-  { path: "/student/studentlist", name: "StudentList", element: StudentList },
+  { path: "/student/list", name: "StudentList", element: StudentList },
+  { path: "/student/add", name: "AddStudent", element: AddStudent },
 ];
