@@ -4,9 +4,7 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const StudentDashboard = React.lazy(() =>
   import("./pages/student/StudentDashboard")
 );
-const AddStudent = React.lazy(() =>
-  import("./student-module/pages/AddStudent")
-);
+const AddStudent = React.lazy(() => import("./pages/student/AddStudent"));
 const StudentList = React.lazy(() => import("./pages/student/StudentList"));
 const AdminDashboard = React.lazy(() => import("./pages/admin/AdminDashboard"));
 const AdminProfile = React.lazy(() => import("./pages/admin/AdminProfile"));
