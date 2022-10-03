@@ -17,11 +17,13 @@ import { getUserInfo } from "./services/userInfo";
 
 const Login = React.lazy(() => import("./pages/Login"));
 const Register = React.lazy(() => import("./pages/Register"));
+const Home = React.lazy(() => import("./pages/Home"));
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const userInFo = getUserInfo();
+
   useEffect(() => {
     if (
       (location.pathname === "/register" || location.pathname === "/login") &&
@@ -38,7 +40,7 @@ function App() {
     location.pathname !== "/login" &&
     location.pathname !== "/notfound" &&
     location.pathname !== "/register" &&
-    location.pathname !== "/dashboard";
+    location.pathname !== "/home";
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -51,7 +53,8 @@ function App() {
         ) : null}
 
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           {routes.map((route, idx) => (
