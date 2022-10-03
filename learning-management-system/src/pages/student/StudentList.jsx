@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import VisibilitySharpIcon from "@mui/icons-material/VisibilitySharp";
 
 const StudentList = () => {
   return (
@@ -35,9 +34,10 @@ const StudentList = () => {
                           <td>911 Deer Ridge Drive,USA</td>
                           <td className="text-left">
                             <div className="actions">
-                              <Link to="" className="btn btn-sm btn-info mr-2">
-                                <VisibilitySharpIcon fontSize="inherit" />
-                              </Link>
+                              <Link
+                                to=""
+                                className="btn btn-sm btn-info mr-2"
+                              ></Link>
                               <Link
                                 to=""
                                 className="btn btn-sm bg-success-light mr-2"
