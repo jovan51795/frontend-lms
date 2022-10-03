@@ -23,7 +23,7 @@ const StudentForm = () => {
     course: "",
     semester: "",
     yearLevel: currentYear,
-    status: false,
+    status: true,
     address: "",
   });
 
@@ -72,10 +72,10 @@ const StudentForm = () => {
   };
 
   // FOR DISABLED Button function
-  // const isFormInvalid = () => {
-  //   const result = schema.validate(studentForm);
-  //   return !!result.error;
-  // };
+  const isFormInvalid = () => {
+    const result = schema.validate(studentForm);
+    return !!result.error;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -349,18 +349,6 @@ const StudentForm = () => {
                           )}
                         </div>
                       </div>
-
-                      {/* TO ADD FUNCTION HERE FOR STRICT BOOLEAN OUTPUT*/}
-                      <div className="col-12 col-sm-3">
-                        <div className="form-group">
-                          <label>Status</label>
-                          <select className="form-control">
-                            <option>Select Status</option>
-                            <option value="true">Active</option>
-                            <option value="false">Inactive</option>
-                          </select>
-                        </div>
-                      </div>
                       <div className="col-12 col-sm-6">
                         <div className="form-group">
                           <label>Address (optional)</label>
@@ -379,7 +367,11 @@ const StudentForm = () => {
                         </div>
                       </div>
                       <div className="col-12">
-                        <button type="submit" className="btn btn-primary">
+                        <button
+                          type="submit"
+                          className="btn btn-primary"
+                          disabled={isFormInvalid()}
+                        >
                           Submit
                         </button>
                       </div>
