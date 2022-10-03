@@ -11,7 +11,7 @@ const Sidebar = () => {
               <span>Main Menu</span>
             </li>
             <li className="submenu active">
-              <Link to="">
+              <Link to="/dashboard">
                 <i className="fas fa-user-graduate"></i> <span> Dashboard</span>{" "}
                 <span className="menu-arrow"></span>
               </Link>
@@ -25,7 +25,7 @@ const Sidebar = () => {
                   <Link to="">Teacher Dashboard</Link>
                 </li>
                 <li>
-                  <Link to="/dashoard/student">Student Dashboard</Link>
+                  <Link to="/dashboard/student">Student Dashboard</Link>
                 </li>
               </ul>
             </li>
