@@ -4,23 +4,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <div className="header-left">
-        <Link to="" className="logo">
-          <img src="/assets/img/logo.png" alt="Logooo" />
-        </Link>
-        <Link to="" className="logo logo-small">
-          <img
-            src="/assets/img/logo-small.png"
-            alt="Logo"
-            width="30"
-            height="30"
-          />
-        </Link>
-      </div>
-      <Link id="toggle_btn">
-        <i className="fas fa-align-left"></i>
-      </Link>
       <div className="top-nav-search">
+        {/* <p>Page Title</p> */}
         <form>
           <input
             type="text"

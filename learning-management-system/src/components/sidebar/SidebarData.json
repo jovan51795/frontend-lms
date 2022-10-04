@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "fas fa-user-graduate",
+    "childrens": [
+      {
+        "title": "Admin",
+        "path": "/dashboard"
+      },
+      {
+        "title": "Student",
+        "path": "/dashboard/student"
+      }
+    ]
+  },
+  {
+    "title": "Student",
+    "icon": "fas fa-user-graduate",
+    "childrens": [
+      {
+        "title": "Student List",
+        "path": "/admin/student/list"
+      },
+      {
+        "title": "Add Student",
+        "path": "/admin/student/add"
+      }
+    ]
+  },
+  {
+    "title": "Subject",
+    "icon": "fas fa-book-reader",
+    "childrens": [
+      {
+        "title": "Subject List",
+        "path": "/admin/subject/list"
+      },
+      {
+        "title": "Add Subject",
+        "path": "/admin/subject/add"
+      }
+    ]
+  }
+]
