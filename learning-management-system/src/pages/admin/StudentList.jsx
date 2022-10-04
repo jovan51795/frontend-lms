@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 
 const StudentList = () => {
   return (
@@ -36,10 +37,12 @@ const StudentList = () => {
                             <div className="actions">
                               <Link
                                 to=""
-                                className="btn btn-sm btn-info mr-2"
-                              ></Link>
+                                className="btn btn-sm btn-info-light mr-2"
+                              >
+                                <FaEye />
+                              </Link>
                               <Link
-                                to=""
+                                to="#"
                                 className="btn btn-sm bg-success-light mr-2"
                               >
                                 <i className="fas fa-pen"></i>

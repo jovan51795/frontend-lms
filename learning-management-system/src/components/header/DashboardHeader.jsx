@@ -96,7 +96,7 @@ function DashboardHeader() {
             </button>
             <div className="logo-normal">
               <a className="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" />
+                <img src="/images/logo.png" alt="" />
               </a>
             </div>
           </div>
@@ -154,7 +154,7 @@ function DashboardHeader() {
                           <div className="menu-widget text-center">
                             <div className="image-wrap entry">
                               <img
-                                src="upload/course_01.jpg"
+                                src="/upload/course_01.jpg"
                                 alt=""
                                 className="img-responsive"
                               />
