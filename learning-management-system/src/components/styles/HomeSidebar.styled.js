@@ -8,18 +8,18 @@ export const SidebarContainer = styled.aside`
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #0d0d0d;
-  display: grid;
+  background: #f9f9f9;
+  display: list-item;
   align-items: center;
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  color: #fff;
+  color: #0d181b;
 `;
 
 export const Icon = styled.div`
@@ -33,14 +33,14 @@ export const Icon = styled.div`
 `;
 
 export const SidebarWrapper = styled.div`
-  color: #fff;
+  color: #022135;
 `;
 
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 80px);
-  text-align: center;
+  display: list-item;
 
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(6, 60px);
@@ -56,11 +56,11 @@ export const SidebarLink = styled(LinkScroll)`
   list-style: none;
   transition: 0.2s ease-in-out;
   text-decoration: none;
-  color: #fff;
+  color: #022135;
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
+    color: #fff;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -87,5 +87,34 @@ export const SidebarRoute = styled(LinkRouter)`
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;
+  }
+`;
+
+export const SideDropDownContainer = styled("div")`
+  width: 35.5em;
+  margin: 0 auto;
+  margin-top: -15px;
+`;
+
+export const SideDropDownContainer2 = styled("div")`
+  width: 130px;
+  margin: 0 auto;
+  height: 45px;
+`;
+
+export const SideDropDownListContainer = styled("div")`
+  width: 250px;
+`;
+
+export const SideSCTAButton = styled.button`
+  background: #022135;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #044e7f;
+    color: #fff;
   }
 `;

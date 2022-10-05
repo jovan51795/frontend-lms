@@ -1,45 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
-  Nav,
-  NavbarContainer,
-  NavLogo,
-  MobileIcon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  NavBtn,
-  NavBtnLink,
-} from "./../styles/HomeHeader.styled";
-import { FaBars } from "react-icons/fa";
+  SHeaderHeight,
+  SHeaderFixed,
+  SHeader,
+  SLeft,
+  SLogoLink,
+  SLogo,
+  SCenter,
+  SRight,
+  SMenuToggleButton,
+  SMenu,
+  SMenuIcon,
+  SCloseIcon,
+} from "../styles/HomeHeader.styled";
+import Nav from "./Nav";
+import logo from "../../assets/images/ABCUlogo.png";
+import { animateScroll as scroll } from "react-scroll";
 
-const HomeHeader = ({ toggle }) => {
+const HomeHeader = ({ isOpen, toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 60) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   return (
     <>
-      <Nav>
-        <NavbarContainer>
-          <NavLogo to="/">ABC University</NavLogo>
-          <MobileIcon onClick={toggle}>
-            <FaBars />
-          </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks to="about">About ABC</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="discover">Admission</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="services">Courses Offered</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/login">Campus Life</NavLinks>
-            </NavItem>
-          </NavMenu>
-          <NavBtn>
-            <NavBtnLink to="/register">Access Module</NavBtnLink>
-          </NavBtn>
-        </NavbarContainer>
-      </Nav>
+      <SHeaderHeight />
+      <SHeaderFixed scrollNav={scrollNav}>
+        <SHeader>
+          <SLeft>
+            <SLogoLink>
+              <SLogo src={logo} alt="logo" onClick={toggleHome} />
+            </SLogoLink>
+          </SLeft>
+          <SCenter>
+            <Nav />
+          </SCenter>
+          <SRight>
+            <SMenuToggleButton onClick={toggle}>
+              {!isOpen ? <SMenuIcon /> : <SCloseIcon />}
+            </SMenuToggleButton>
+          </SRight>
+        </SHeader>
+      </SHeaderFixed>
+      <SMenu style={isOpen ? { left: 0 } : {}}>
+        <Nav toggle={toggle} />
+      </SMenu>
     </>
   );
 };

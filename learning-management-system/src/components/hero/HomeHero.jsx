@@ -4,14 +4,15 @@ import {
   HeroBg,
   VideoBg,
   HeroContent,
-  HeroH1,
   HeroP,
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
+  HeroImg,
 } from "../styles/HomeHero.styled";
 import { Button } from "../styles/Button.styled";
-import Video from "../../assets/videos/video1.mp4";
+import Video from "../../assets/videos/video.mp4";
+import ABC from "../../assets/images/DashboardLogoWhiteTxt.png";
 
 const HomeHero = () => {
   const [hover, setHover] = useState(false);
@@ -26,9 +27,9 @@ const HomeHero = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>ATANASOFF-BERRY COMPUTER UNIVERSITY</HeroH1>
-        <HeroP>Be an Atanasoff-Berry Student.</HeroP>
-        <HeroBtnWrapper>
+        <HeroImg src={ABC} alt="brand" />
+        <HeroP>Be an Atanasoff-Berry Bear.</HeroP>
+        {/* <HeroBtnWrapper>
           <Button
             to="register"
             onMouseEnter={onHover}
@@ -38,7 +39,7 @@ const HomeHero = () => {
           >
             Apply Now! {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
-        </HeroBtnWrapper>
+        </HeroBtnWrapper> */}
       </HeroContent>
     </HeroContainer>
   );
