@@ -1,114 +1,161 @@
-import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
-import { Link as LinkScroll } from "react-scroll";
+import styled, { css } from "styled-components";
+import { v, b } from "../../assets/styles/variables";
+import { Link } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
+import { FaBars } from "react-icons/fa";
 
-export const Nav = styled.nav`
-  background: #000;
-  height: 60px;
-  //   margin-top: -80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  position: sticky;
+export const SHeaderHeight = styled.div`
+  height: ${v.headerHeight};
+`;
+
+export const SHeaderFixed = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
+  height: ${v.headerHeight};
+  background: ${({ scrollNav }) => (scrollNav ? "#f9f9f9" : "transparent")};
   z-index: 10;
+`;
+
+export const SHeader = styled.header`
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease padding;
+  padding: 0 ${v.mdSpacing};
+
+  @media ${b.lg} {
+    padding: 0 ${v.lgSpacing};
+  }
+  > div {
+    flex: 1;
+  }
+`;
+
+export const SLeft = styled.div`
+  margin-right: 200px;
+
+  @media ${b.md} {
+    margin-right: 230px;
+  }
+`;
+
+export const SCenter = styled.div`
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  flex-basis: 200px;
+
+  @media ${b.md} {
+    display: flex;
+  }
+`;
+export const SRight = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 150px;
 
   @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
+    margin-left: 150px;
   }
 `;
-export const NavbarContainer = styled.div`
+
+// Left
+export const SLogoLink = styled(Link)`
   display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
+  width: 40px;
+  color: inherit;
+  text-decoration: none;
 `;
 
-export const NavLogo = styled(LinkRouter)`
-  color: #fff;
+export const SLogo = styled.img`
+  width: 175px;
+  height: 55px;
   justify-self: flex-start;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
 `;
 
-export const MobileIcon = styled.div`
-  display: none;
+// Center
+// nav
 
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: -10px;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #fff;
-  }
-`;
-
-export const NavMenu = styled.ul`
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  margin-right: -22px;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const NavItem = styled.li`
-  height: 80px;
-`;
-
-export const NavLinks = styled(LinkScroll)`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
+const btnReset = css`
   cursor: pointer;
-
-  &.active {
-    border-bottom: 3px solid #01bf71;
-  }
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const NavBtnLink = styled(LinkRouter)`
-  border-radius: 50px;
-  background: #01bf71;
-  white-space: nowrap;
-  padding: 10px 22px;
-  color: #010606;
-  font-size: 16px;
-  outline: none;
+  background: none;
   border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
+  outline: none;
+  font-family: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  padding: 0;
+`;
+
+// Right
+export const SCTAButton = styled.button`
+  ${btnReset}
+  background: #022135;
+  color: #fff;
+  margin-top: 215px;
+  padding: calc(${v.smSpacing} - 2px) 13px;
+  border-radius: ${v.borderRadius};
+  display: none;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;
+  }
+
+  @media ${b.md} {
+    display: initial;
+  }
+`;
+
+export const SMenuToggleButton = styled.button`
+  ${btnReset}
+  width: 32px;
+  position: relative;
+  z-index: 100;
+
+  @media ${b.md} {
+    display: none;
+  }
+`;
+
+const iconStyles = css`
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #0d181b;
+`;
+export const SMenuIcon = styled(FaBars)`
+  ${iconStyles}
+`;
+export const SCloseIcon = styled(IoMdClose)`
+  ${iconStyles}
+`;
+
+// Menu
+export const SMenu = styled.div`
+  position: fixed;
+  top: ${v.headerHeight};
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  background: #f9f9f9;
+  width: 100%;
+  height: calc(100% - ${v.headerHeight});
+  transition: 0.3s ease left;
+  z-index: 10;
+  padding: ${v.lgSpacing};
+
+  @media ${b.md} {
+    display: none;
   }
 `;

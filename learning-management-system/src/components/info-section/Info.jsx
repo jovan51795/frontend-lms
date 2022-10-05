@@ -22,6 +22,7 @@ const Info = ({
   topLine,
   lightText,
   darkText,
+  bigText,
   headLine,
   description,
   buttonLabel,
@@ -39,7 +40,9 @@ const Info = ({
             <Column1>
               <TextWrapper>
                 <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headLine}</Heading>
+                <Heading lightText={lightText} bigText={bigText}>
+                  <i> {headLine} </i>
+                </Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
