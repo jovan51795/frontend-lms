@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import { adminAuth } from "../reducers/adminAuthreducer";
+import { combineReducers } from 'redux'
+import { adminAuth } from '../reducers/adminAuthreducer'
 
-const allReducers = combineReducers({ adminAuth });
+const allReducers = combineReducers({ adminAuth })
 
-export default allReducers;
+export default allReducers

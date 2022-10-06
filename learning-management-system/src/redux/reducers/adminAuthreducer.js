@@ -1,4 +1,4 @@
-import variables from "../constants/constantVariables";
+import variables from '../constants/constantVariables'
 
 export const adminAuth = (state = {}, action) => {
   switch (action.type) {
@@ -6,10 +6,10 @@ export const adminAuth = (state = {}, action) => {
       return {
         ...state,
         payload: action.payload,
-      };
+      }
     case variables.adminLogin:
-      return action.payload;
+      return action.payload
     default:
-      return state;
+      return state
   }
-};
+}
