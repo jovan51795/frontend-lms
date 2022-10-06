@@ -1,76 +1,38 @@
-import React, { Suspense, useEffect } from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-import "./App.css";
-import Header from "./components/header/Header";
-import Sidebar from "./components/sidebar/Sidebar";
-import Loading from "./pages/loading/Loading";
-import Page404 from "./pages/page404/Page404";
-import { routes } from "./routes";
-import { ToastContainer } from "react-toastify";
-import { getUserInfo } from "./services/userInfo";
+import React, { Suspense } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-const Login = React.lazy(() => import("./pages/Login"));
-const Register = React.lazy(() => import("./pages/Register"));
-const Home = React.lazy(() => import("./pages/Home"));
+import './scss/style.scss'
 
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const userInFo = getUserInfo();
+  const loading = (
+    <div className="pt-3 text-center">
+      <div className="sk-spinner sk-spinner-pulse"></div>
+    </div>
+  )
+  // Containers
+  const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 
-  useEffect(() => {
-    if (
-      (location.pathname === "/register" || location.pathname === "/login") &&
-      userInFo &&
-      userInFo.status === 1
-    ) {
-      navigate("/dashboard");
-    } else if (!userInFo || (userInFo && userInFo.status === 0)) {
-      navigate("/login");
-    }
-  }, [userInFo]);
+  // Pages
+  const Login = React.lazy(() => import('./pages/Login'))
+  const Register = React.lazy(() => import('./pages/Register'))
+  const Home = React.lazy(() => import('./pages/Home'))
+  const Page404 = React.lazy(() => import('./pages/Page404'))
+  const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
-  const hideSidebarAndHeader =
-    location.pathname !== "/login" &&
-    location.pathname !== "/notfound" &&
-    location.pathname !== "/register" &&
-    location.pathname !== "/home";
   return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <ToastContainer />
-        {hideSidebarAndHeader ? (
-          <>
-            <Header />
-            <Sidebar />
-          </>
-        ) : null}
-
+    <BrowserRouter>
+      <Suspense fallback={loading}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {routes.map((route, idx) => (
-            <Route
-              key={idx}
-              path={route.path}
-              name={route.name}
-              element={<route.element />}
-            />
-          ))}
-          <Route path="*" element={<Navigate to="/notfound" />} />
-          <Route path="/notfound" element={<Page404 />} />
+          <Route exact path="/login" name="Login Page" element={<Login />} />
+          <Route exact path="/register" name="Register Page" element={<Register />} />
+          <Route exact path="/home" name="Home Page" element={<Home />} />
+          <Route exact path="/404" name="Page 404" element={<Page404 />} />
+          <Route exact path="/500" name="Page 500" element={<Page500 />} />
+          <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>
       </Suspense>
-    </>
-  );
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

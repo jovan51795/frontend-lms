@@ -1,6 +1,6 @@
 const variables = {
-  adminRegister: "ADMINREGISTER",
-  adminLogin: "ADMINLOGIN",
-};
+  adminRegister: 'ADMINREGISTER',
+  adminLogin: 'ADMINLOGIN',
+}
 
-export default variables;
+export default variables
